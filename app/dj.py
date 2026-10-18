@@ -86,7 +86,7 @@ def _classify(listened_ms: int, duration_ms: int) -> str:
     return "finish"
 
 
-def _recompute_vibe(force: bool = False) -> None:
+async def _recompute_vibe(force: bool = False) -> None:
     ctx = _current_ctx()
     if not ctx:
         return
@@ -95,7 +95,9 @@ def _recompute_vibe(force: bool = False) -> None:
         return
     old = state.spec
     state.ctx_dict, state.ctx_text = ctx, txt
-    spec = model.vibe(txt)
+    # model.vibe() is a blocking HTTP call (can take seconds, longer if the Veri deployment is
+    # waking from scale-to-zero) -- run it off the event loop so /state and /start stay responsive.
+    spec = await asyncio.to_thread(model.vibe, txt)
     state.spec = spec.model_dump()
     state.last_vibe_at = time.time()
     if old and (abs(old["energy"] - spec.energy) > BIG_SHIFT or abs(old["valence"] - spec.valence) > BIG_SHIFT):
@@ -158,7 +160,7 @@ async def tick() -> None:
 
     state.last_progress_ms = prog
 
-    _recompute_vibe()
+    await _recompute_vibe()
 
     # Queue the next track once we're 15s into the current one (based on the context -- calendar
     # event, campus location, speed -- at that moment), instead of waiting for the track to almost
@@ -170,7 +172,7 @@ async def tick() -> None:
 
 async def loop() -> None:
     _load_log()
-    _recompute_vibe(force=True)
+    await _recompute_vibe(force=True)
     while state.running:
         await tick()
         await asyncio.sleep(POLL_S)

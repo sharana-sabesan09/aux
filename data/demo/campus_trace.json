@@ -1,0 +1,58 @@
+[
+  {"t": 0, "ctx": {
+    "day": "Tue", "time": "8:52 AM", "bucket": "morning",
+    "place": "dorm room, De Neve", "speed": "still, 0 mph", "motion": "about to head out",
+    "weather": "64F clear, bright",
+    "day_load": "today: 4 events, last ended 14 hrs ago",
+    "cal": "next: \"CS 35L Lecture\" in 8 min",
+    "recent": "no plays in last hour"
+  }},
+  {"t": 70, "ctx": {
+    "day": "Tue", "time": "9:04 AM", "bucket": "morning",
+    "place": "Boelter Hall", "speed": "walking, 3 mph", "motion": "walking to class",
+    "weather": "66F clear, bright",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 14 hrs ago",
+    "cal": "current: \"CS 35L Lecture\"",
+    "recent": "finished 1 (chill, lo-fi)"
+  }},
+  {"t": 140, "ctx": {
+    "day": "Tue", "time": "10:22 AM", "bucket": "morning",
+    "place": "Powell Library", "speed": "still, 0 mph", "motion": "settled in, headphones on",
+    "weather": "68F partly cloudy, bright",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 10 min ago",
+    "cal": "current: \"Study session\" | next: \"Gym w/ Priya\" in 90 min",
+    "recent": "finished 2 (focus, lo-fi)"
+  }},
+  {"t": 210, "ctx": {
+    "day": "Tue", "time": "12:48 PM", "bucket": "afternoon",
+    "place": "De Neve Plaza", "speed": "walking, 3 mph", "motion": "grabbing lunch",
+    "weather": "71F sunny, bright",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 30 min ago",
+    "cal": "current: \"Lunch w/ roommates\" | next: \"Gym w/ Priya\" in 20 min",
+    "recent": "finished 3 (chill, acoustic)"
+  }},
+  {"t": 280, "ctx": {
+    "day": "Tue", "time": "1:31 PM", "bucket": "afternoon",
+    "place": "John Wooden Center", "speed": "jogging, 6 mph", "motion": "mid-workout",
+    "weather": "72F sunny, bright",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 70 min ago",
+    "cal": "current: \"Gym w/ Priya\"",
+    "recent": "finished 1 (hype, electronic)"
+  }},
+  {"t": 350, "ctx": {
+    "day": "Tue", "time": "7:58 PM", "bucket": "evening",
+    "place": "Sunset Rec", "speed": "walking, 2 mph", "motion": "arriving",
+    "weather": "61F clear, dark",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 4 hrs ago",
+    "cal": "current: \"Friend's birthday party\"",
+    "recent": "finished 1 (hype, party)"
+  }},
+  {"t": 420, "ctx": {
+    "day": "Tue", "time": "8:15 PM", "bucket": "evening",
+    "place": "Sunset Rec", "speed": "still, 0 mph", "motion": "dancing",
+    "weather": "60F clear, dark",
+    "day_load": "today: 4 events, 1 back-to-back, last ended 4 hrs ago",
+    "cal": "current: \"Friend's birthday party\"",
+    "recent": "finished 3 (hype, party), skipped 1"
+  }}
+]
