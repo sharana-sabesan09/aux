@@ -1,0 +1,40 @@
+kind = "train"  # required: dispatched by `veri run`
+
+[job]
+output_model = "my-tuned-model"
+
+[model]
+base = "Qwen/Qwen3-4B"
+
+[dataset]
+# A registered dataset's name or id. Register this one (public GSM8K) with:
+#   veri datasets connect-hf openai/gsm8k --config main --split train --map question=prompt --name gsm8k-train
+# Or upload your own JSONL: veri datasets upload datasets/train.jsonl --name my-train
+id = "gsm8k-train"
+
+[reward]
+file = "../reward.py"  # relative to this file; attached to the job inline at submit (TRL signature)
+
+[method]
+type = "grpo"                            # grpo | sft_text | dpo
+learning_rate = 1e-6
+max_steps = 100
+rollouts_per_prompt = 4
+max_response_length = 512
+
+[resources]
+gpu_type = "L4-24GB"                     # see `veri gpu list` for the shapes you can order
+gpu_count = 1
+
+[checkpoint]
+destination = "veri"                     # the only destination: `veri jobs download <id>` fetches it
+
+# Weights & Biases logging is set once per account, not per config: `veri wandb set`.
+
+# Push the trained artifact to Hugging Face when the job finishes.
+# Requires a connected account: `veri hf set`. artifact = "merged" (full
+# weights) or "adapter" (LoRA adapter; needs method lora_rank).
+# [huggingface]
+# repo = "your-namespace/your-model"
+# artifact = "merged"
+# private = true

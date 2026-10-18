@@ -1,0 +1,5 @@
+# Project marker. Every config under configs/ is self-contained: the CLI
+# does not read defaults from this file.
+
+[project]
+name = "aux"
