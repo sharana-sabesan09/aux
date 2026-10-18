@@ -1,0 +1,28 @@
+kind = "train"
+
+[job]
+output_model = "aux-sft"
+
+[model]
+base = "Qwen/Qwen3-1.7B"
+
+[dataset]
+id = "fcf6d7b6cea4"
+
+[method]
+type = "sft_text"
+num_epochs = 2
+lora_rank = 16
+lora_alpha = 32
+
+[resources]
+gpu_type = "L4-24GB"
+gpu_count = 1
+
+[provider]
+name = "aws"
+
+[huggingface]
+repo = "ssabesan9009/aux-sft"
+artifact = "merged"
+private = false

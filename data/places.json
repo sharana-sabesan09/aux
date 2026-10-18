@@ -1,0 +1,10 @@
+[
+  {"name": "UCLA Ackerman/Pauley", "lat": 34.0708, "lon": -118.4451, "radius_m": 150},
+  {"name": "UCLA Royce quad", "lat": 34.0725, "lon": -118.4418, "radius_m": 250},
+  {"name": "UCLA Powell library", "lat": 34.0715, "lon": -118.4420, "radius_m": 200},
+  {"name": "UCLA Boelter", "lat": 34.0693, "lon": -118.4432, "radius_m": 200},
+  {"name": "UCLA Wooden rec", "lat": 34.0719, "lon": -118.4487, "radius_m": 250},
+  {"name": "UCLA Hilltop dorms", "lat": 34.0754, "lon": -118.4466, "radius_m": 400},
+  {"name": "UCLA campus", "lat": 34.0710, "lon": -118.4452, "radius_m": 700},
+  {"name": "Westwood Village", "lat": 34.0631, "lon": -118.4466, "radius_m": 600}
+]

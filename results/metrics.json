@@ -1,0 +1,68 @@
+{
+  "results": {
+    "teacher": {
+      "json_validity_pct": 100.0,
+      "teacher_agreement_mae": {
+        "energy": 0.014,
+        "valence": 0.013,
+        "bpm_mid": 1.7
+      },
+      "latency_s": {
+        "p50": 1.912,
+        "p95": 2.375
+      },
+      "n": 40,
+      "preference_agreement_pct": 45.0,
+      "wall_s": 31.5
+    },
+    "aux-sft": {
+      "json_validity_pct": 100.0,
+      "teacher_agreement_mae": {
+        "energy": 0.087,
+        "valence": 0.048,
+        "bpm_mid": 8.6
+      },
+      "latency_s": {
+        "p50": 1.12,
+        "p95": 1.23
+      },
+      "n": 40,
+      "preference_agreement_pct": 45.0,
+      "wall_s": null
+    },
+    "aux-dpo": {
+      "json_validity_pct": 100.0,
+      "teacher_agreement_mae": {
+        "energy": 0.075,
+        "valence": 0.041,
+        "bpm_mid": 8.3
+      },
+      "latency_s": {
+        "p50": 1.12,
+        "p95": 1.17
+      },
+      "n": 40,
+      "preference_agreement_pct": 45.0,
+      "wall_s": null
+    },
+    "aux-dpo-v2": {
+      "json_validity_pct": 100.0,
+      "teacher_agreement_mae": {
+        "energy": 0.101,
+        "valence": 0.063,
+        "bpm_mid": 9.4
+      },
+      "latency_s": {
+        "p50": 1.16,
+        "p95": 1.436
+      },
+      "n": 40,
+      "preference_agreement_pct": 45.0,
+      "wall_s": 18.9
+    }
+  },
+  "skipped_targets": [
+    "base"
+  ],
+  "note": "aux-sft/aux-dpo values carried over from the earlier full eval run (results/runs.md M6 table); only teacher + aux-dpo-v2 were re-queried in the DPO v2 experiment run, to avoid re-paying for aux-sft/aux-dpo deployment wake-ups."
+}

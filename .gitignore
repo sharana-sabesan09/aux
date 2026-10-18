@@ -18,3 +18,7 @@ datasets/*.parquet
 checkpoints/
 data/audio/
 *.mp3
+
+# Aux local state
+.tokens.json
+data/play_log.jsonl

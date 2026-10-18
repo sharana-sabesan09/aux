@@ -1,19 +1,19 @@
 kind = "deploy"  # required: dispatched by `veri run`
 
 [deployment]
-name = "my-endpoint"
-# Point at a finished training job (its id from `veri jobs list`), a HF repo,
-# or a saved model id from your library.
-model = "job_TODO"                       # replace with your training job id
-source = "training_job"                  # training_job | huggingface | custom_model
+name = "aux-dpo"
+model = "ssabesan9009/aux-dpo"
+source = "huggingface"
 
 [resources]
 gpu_type = "L4-24GB"
 gpu_count = 1
 
 [autoscaling]
-min_replicas = 1                         # 0 parks the endpoint when idle (scale-to-zero)
-max_replicas = 1                         # > min_replicas arms autoscaling
+min_replicas = 0                         # scale to zero when idle, stop billing
+max_replicas = 1
 # concurrency_target = 8                 # per-replica in-flight requests the autoscaler targets
 # scale_to_zero_window_seconds = 3600    # idle seconds before a min_replicas = 0 endpoint parks
 # self_heal_attempts = 3                 # 0-5: times a lost last GPU box is replaced before the endpoint stops (or parks, min_replicas = 0)
+
+# live deployment id (from `veri deployments create`): aadf1250fda7

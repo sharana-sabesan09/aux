@@ -1,0 +1,29 @@
+kind = "train"
+
+[job]
+output_model = "aux-dpo"
+
+[model]
+base = "ssabesan9009/aux-sft"
+
+[dataset]
+id = "e1ddfb7b1f42"
+
+[method]
+type = "dpo"
+num_epochs = 2
+lora_rank = 16
+lora_alpha = 32
+beta = 0.1
+
+[resources]
+gpu_type = "L4-24GB"
+gpu_count = 1
+
+[provider]
+name = "aws"
+
+[huggingface]
+repo = "ssabesan9009/aux-dpo"
+artifact = "merged"
+private = false
